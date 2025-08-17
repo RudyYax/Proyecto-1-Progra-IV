@@ -94,6 +94,6 @@ while opcion != 5:
         case 3:
             print("Buscar Producto")
         case 4:
-            print("Gestion de Productos")
+            print("Gestion de Productos ")
         case 5:
             print("Salir")
