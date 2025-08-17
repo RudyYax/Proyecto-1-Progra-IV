@@ -33,9 +33,17 @@ class Registrar_Producto:
                 print("No se puedo agregar un producto")
                 continue
 
+    def Mostrar_Productos(self):
+        if not self.producto:
+            print("No hay productos registrados.")
+            return
+        print("Productos registrados: ")
+        for i, libros in enumerate(self.producto.values(), start= 0):
+            print(f"{i}. {Ingreso.mostrar()}")
 
 
 
+registro_Codigo = Registrar_Producto()
 
 opcion = 0
 while opcion != 5:
@@ -56,9 +64,26 @@ while opcion != 5:
             print("3.- Sueteres")
             print("4.- Zapatos")
             categoria = int(input("seleccione una de las opciones: "))
+            match categoria:
+                case 1:
+                    print("Categoria Playeras")
+                    registro_Codigo.agregar_producto()
+                case 2:
+                    print("Categoria Pantalones")
+                    registro_Codigo.agregar_producto()
+                case 3:
+                    print("Categoria Sueteres")
+                    registro_Codigo.agregar_producto()
+                case 4:
+                    print("Categoria Zapatos")
+                    registro_Codigo.agregar_producto()
+
+
 
         case 2:
             print("Mostrar Productos")
+            registro_Codigo.Mostrar_Productos()
+
         case 3:
             print("Buscar Producto")
         case 4:
