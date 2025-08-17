@@ -44,7 +44,7 @@ class Registrar_Producto:
             return
         print("Productos registrados: ")
         for i, libros in enumerate(self.producto.values(), start= 0):
-            print(f"{i}.", end=")
+            print(f"{i}., end=")
 
 
 
@@ -94,6 +94,6 @@ while opcion != 5:
         case 3:
             print("Buscar Producto")
         case 4:
-            print("Gestion de Productos")
+            print("Gestion de Productos ")
         case 5:
             print("Salir")
