@@ -44,7 +44,7 @@ class Registrar_Producto:
             return
         print("Productos registrados: ")
         for i, libros in enumerate(self.producto.values(), start= 0):
-            print(f"{i}.", end=")
+            print(f"{i}., end=")
 
 
 
