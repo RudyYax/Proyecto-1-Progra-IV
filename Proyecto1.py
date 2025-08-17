@@ -15,7 +15,12 @@ class Registrar_Producto:
     def agregar_producto(self):
         while True:
             try:
-                codigo = int(input("Ingresa el codigo del producto: "))
+                codigo = input("Ingresa el codigo del producto (ENTER para volver al menú de categorías, 0 para regresar al menú principal): ")
+                if codigo == "":
+                    break
+                if codigo == "0":
+                    return
+                codigo = int(codigo)
                 if codigo in self.producto:
                     print("El codigo del producto ya existe.")
                     error = input("Presione ENTER para ingresar nuevamente o 0 para salir:")
@@ -28,10 +33,10 @@ class Registrar_Producto:
                 stock_producto = input("Ingresa el stock del producto: ")
                 self.producto[codigo] = Ingreso(codigo, nombre_producto, precio_producto, stock_producto)
                 print("Producto registrado correctamente.")
-
             except ValueError:
                 print("No se puedo agregar un producto")
                 continue
+
 
     def Mostrar_Productos(self):
         if not self.producto:
@@ -39,7 +44,7 @@ class Registrar_Producto:
             return
         print("Productos registrados: ")
         for i, libros in enumerate(self.producto.values(), start= 0):
-            print(f"{i}. {Ingreso.mostrar()}")
+            print(f"{i}.", end=")
 
 
 
@@ -66,8 +71,10 @@ while opcion != 5:
             categoria = int(input("seleccione una de las opciones: "))
             match categoria:
                 case 1:
-                    print("Categoria Playeras")
-                    registro_Codigo.agregar_producto()
+                    while True:
+                        print("Categoria Playeras")
+                        registro_Codigo.agregar_producto()
+
                 case 2:
                     print("Categoria Pantalones")
                     registro_Codigo.agregar_producto()
